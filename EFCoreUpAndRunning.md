@@ -14,3 +14,6 @@ The second thing you need is to install EF Tools in order to execute EF Core com
 
 #### Installing via Nu-Get Package Manager
 1. Go to the package manager, and browse for `Microsoft.EntityFrameworkCore.Tools`.
+
+#### Installing the Scaffolding Tools
+1. Go to the package manager, and browse for `Microsoft.VisualStudio.Web.CodeGeneration.Design`.
