@@ -23,7 +23,7 @@ Navigate to your `appsettings.json` (create one if you don't have one already), 
 ```JSON
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=(local);Database=PacktDatabase;Trusted_Connection=True;"
+    "DefaultConnection": "Server=(local);Database=NameOfYourDatabase;Trusted_Connection=True;"
   }
 }
 ```
