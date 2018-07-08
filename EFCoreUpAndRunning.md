@@ -17,3 +17,13 @@ The second thing you need is to install EF Tools in order to execute EF Core com
 
 #### Installing the Scaffolding Tools
 1. Go to the package manager, and browse for `Microsoft.VisualStudio.Web.CodeGeneration.Design`.
+
+### In Your AppSettings
+Navigate to your `appsettings.json` (create one if you don't have one already), and paste in the following:
+```JSON
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(local);Database=PacktDatabase;Trusted_Connection=True;"
+  }
+}
+```
