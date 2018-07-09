@@ -1,4 +1,4 @@
-# Up and Running with Entity Framework Core
+# Up and Running with Entity Framework Core - The "Code-First" Approach
 
 ### 1. Setting up EF Core
 The first thing you need to do after creating your .NET Core project is to install Entity Framework Core. You can do this one of two ways: the nu-get package manager or the package manager console.
@@ -40,3 +40,9 @@ public class Model : DbContext
         }
     }
 ```
+Then, in your `Startup.cs` file, under the `services.AddMvc...` in the `ConfigureServices` method, paste in the following:
+```C#
+var connection = @"Server=(local);Database=EFCorePractice;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<Model>(options => options.UseSqlServer(connection));
+```
+Make sure you change `EFCorePractice` to whatever you want to name your database.
