@@ -27,3 +27,16 @@ Navigate to your `appsettings.json` (create one if you don't have one already), 
   }
 }
 ```
+Then, you want to add your DB Context Model:
+1. Add folder to project called `Models` (if you don't have one yet).
+2. Add your db context model class (you can call it `Model.cs`) to the `Model` folder.
+3. Add the following to that file:
+```C#
+public class Model : DbContext
+    {
+        public Model(DbContextOptions<Model> options)
+            : base(options)
+        {
+        }
+    }
+```
