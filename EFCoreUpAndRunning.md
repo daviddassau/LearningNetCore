@@ -1,6 +1,6 @@
 # Up and Running with Entity Framework Core
 
-### Setting up EF Core
+### 1. Setting up EF Core
 The first thing you need to do after creating your .NET Core project is to install Entity Framework Core. You can do this one of two ways: the nu-get package manager or the package manager console.
 
 #### Installing via Nu-Get Package Manager
@@ -18,7 +18,7 @@ The second thing you need is to install EF Tools in order to execute EF Core com
 #### Installing the Scaffolding Tools
 1. Go to the package manager, and browse for `Microsoft.VisualStudio.Web.CodeGeneration.Design`.
 
-### In Your AppSettings
+### 2. Set up DB
 Navigate to your `appsettings.json` (create one if you don't have one already), and paste in the following:
 ```JSON
 {
