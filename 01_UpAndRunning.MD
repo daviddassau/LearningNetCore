@@ -9,3 +9,7 @@ This is getting set up with a new .NET Core project, using the command line and 
 ### Reviewing the project files
 - In `launchSettings.json` go to around line 24 where it says `"applicationUrl"`, and edit it to 
 read `"applicationUrl": "http://localhost:5000",`
+
+### Running the application
+- Open up the terminal window inside VS Code and type `dotnet run`. This will run the application.
+- In your browser, type in `http://localhost:5000/api/values`. The page should display `["value1","value2"]`.
