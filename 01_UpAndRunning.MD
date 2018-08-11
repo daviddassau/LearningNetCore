@@ -30,3 +30,4 @@ namespace DatingApp.API.Data
     }
 }
 ```
+3. In `Startup.cs` go to the method that starts with `public void ConfigureServices...`. Put the following line as the first line in the method: `services.AddDbContext<DataContext>(x => x.UseSqlite("Connectionstring"));`. You will need to do a nuget package install for Sqlite, so do a `Ctr + Shift + P` and type in "nuget". Then you want to type in `Microsoft.EntityFrameworkCore.Sqlite`, select the most up to date version, and you're GTG. 
