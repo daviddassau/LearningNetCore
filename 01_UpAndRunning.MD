@@ -13,3 +13,20 @@ read `"applicationUrl": "http://localhost:5000",`
 ### Running the application
 - Open up the terminal window inside VS Code and type `dotnet run`. This will run the application.
 - In your browser, type in `http://localhost:5000/api/values`. The page should display `["value1","value2"]`.
+
+### Creating The First Model and DataContext
+1. The first thing you want to do is create a new folder in the main directory called `Models`. This will hold your data models. Once you create the folder, right-click and add a new C# class and name it `Value`. In `Value.cs` you can put in some dummy fields for now, such as `public int Id { get; set; }`.
+2. Then you want to create an additional folder in the main directory called `Data` and put a new C# class in it called `DataContext`. You want to add a few things to this file; it should end up looking like this:
+```C#
+using DatingApp.API.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace DatingApp.API.Data
+{
+    public class DataContext : DbContext
+    {
+        public DataContext(DbContextOptions<DataContext> options) : base (options) {}
+        public DbSet<Value> Values { get; set; }
+    }
+}
+```
