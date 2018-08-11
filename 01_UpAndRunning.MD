@@ -58,3 +58,4 @@ services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionS
 7. If you click on the Browse Data tab, you can now enter in rows of data this way, if you'd like. All you need to do is write in the data, and click Write Changes at the top.
 
 ### Retrieving Data from the Database
+1. In your `ValuesController.cs`, write a new method above the first method.
