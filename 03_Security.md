@@ -26,3 +26,15 @@ public interface IAuthRepository
     Task<bool> UserExists(string username);
 }
 ```
+
+### Creating the Concrete Auth Repository and Register Method
+1. Create a new C# class in the `Data` folder
+2. Let it inherit the `IAuthRepository`. You will get a red-line, just CTRL+. and say "Implement interface".
+3. Above the newly generated code, as the new method(s), insert the following snippet:
+```C#
+private readonly DataContext _context;
+public AuthRepository(DataContext context)
+{
+    _context = context;
+}
+```
