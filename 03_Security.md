@@ -59,3 +59,16 @@ using (var hmac = new System.Security.Cryptography.HMACSHA512())
   passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
 }
 ```
+
+### Creating The Login Repository Method
+1. For the Login method in `AuthRepository.cs`, add `async` after `public`. Then, replace the exception line inside the method with:
+```C#
+var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+
+if (user == null)
+    return null;
+    
+if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+    return null;
+```
+2. Copy what is inside the `CreatePasswordHash` method, and paste it in `VerifyPasswordHash` method. The exception is you are going to pass `passwordSalt` into `HMACSHA512()`, get rid of `passwordSalt = hmac.Key;`, and instead of `passwordHash = h...`, do `var computedHash = h...`.
