@@ -28,7 +28,7 @@ public interface IAuthRepository
 ```
 
 ### Creating the Concrete Auth Repository and Register Method
-1. Create a new C# class in the `Data` folder
+1. Create a new C# class in the `Data` folder called `AuthRepository`
 2. Let it inherit the `IAuthRepository`. You will get a red-line, just CTRL+. and say "Implement interface".
 3. Above the newly generated code, as the new method(s), insert the following snippet:
 ```C#
@@ -36,5 +36,26 @@ private readonly DataContext _context;
 public AuthRepository(DataContext context)
 {
     _context = context;
+}
+```
+4. Within the `Register` method, delete the `throw new...` and replace it with:
+```C#
+byte[] passwordHash, passwordSalt;
+CreatePasswordHash(password, out passwordHash, out passwordSalt);
+
+user.PasswordHash = passwordHash;
+user.PasswordSalt = passwordSalt;
+
+await _context.Users.AddAsync(user);
+await _context.SaveChangesAsync();
+
+return user;
+```
+5. The `CreatePasswordHash` part will be red-lined, so go ahead and CTRL + . click and say `Generate method...`. Remove what's inside the new method, and replace it with:
+```C#
+using (var hmac = new System.Security.Cryptography.HMACSHA512())
+{
+  passwordSalt = hmac.Key;
+  passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
 }
 ```
