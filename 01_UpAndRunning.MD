@@ -59,3 +59,8 @@ services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionS
 
 ### Retrieving Data from the Database
 1. In your `ValuesController.cs`, write a new method above the first method.
+
+
+### Starting your app in VS Code
+- For the front-end, cd into your front-end project folder, and do a `ng-serve` in the terminal.
+- For the back-end (in a separate terminal window) cd into your back-end project, and do a `dotnet watch run`
