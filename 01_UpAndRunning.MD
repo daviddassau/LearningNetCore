@@ -64,3 +64,4 @@ services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionS
 ### Starting your app in VS Code
 - For the front-end, cd into your front-end project folder, and do a `ng-serve` in the terminal.
 - For the back-end (in a separate terminal window) cd into your back-end project, and do a `dotnet watch run`
+- Your site is available at `http://localhost:4200/`
