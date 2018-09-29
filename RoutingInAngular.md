@@ -6,4 +6,6 @@
 - Generate a new file at the root of the `app` folder called `routes.ts`. This will hold all of our roots. You will need the following code by default:
 ```
 import { Routes } from '@angular/router';
+
+export const appRoutes: Routes = [];
 ```
